@@ -6,8 +6,8 @@ use Mix.Config
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
 config :boom_box, BoomBox.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "boombox",
+  password: "finalproject",
   database: "boom_box_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

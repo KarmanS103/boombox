@@ -19,6 +19,15 @@ defmodule BoomBoxWeb.Router do
     get "/", PageController, :index
   end
 
+  scope "api/v1", BoomBoxWeb do
+    pipe_through :api
+
+    resources "/users", UserController, except: [:new, :edit]
+    resources "/artist", ArtistController, except: [:new, :edit]
+    resources "/leaderboard", LeaderboardController, except: [:new, :edit]
+    resources "/following_artist", Following_ArtistController, except: [:new, :edit]
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", BoomBoxWeb do
   #   pipe_through :api

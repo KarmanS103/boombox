@@ -2,8 +2,8 @@ use Mix.Config
 
 # Configure your database
 config :boom_box, BoomBox.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "boombox",
+  password: "finalproject",
   database: "boom_box_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,

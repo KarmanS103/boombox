@@ -1,4 +1,4 @@
-// Nav.js
+// Based on code from Nat Tuck's Lecture 17 Code
 import { Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 

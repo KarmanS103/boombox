@@ -1,5 +1,9 @@
+import { Container } from 'react-bootstrap';
+
 export default function Generator() {
     return(
-        <h1>Generate Lyrics</h1>
+        <Container>
+            <h1>Generate Lyrics</h1>
+        </Container>
     );
 }

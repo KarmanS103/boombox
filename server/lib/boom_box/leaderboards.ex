@@ -7,6 +7,7 @@ defmodule BoomBox.Leaderboards do
   alias BoomBox.Repo
 
   alias BoomBox.Leaderboards.Leaderboard
+    alias BoomBox.Artists.Artist
 
   @doc """
   Returns the list of leaderboard.
@@ -18,6 +19,10 @@ defmodule BoomBox.Leaderboards do
 
   """
   def list_leaderboard do
+    # query = from p in Leaderboard,
+    #         join: c in Artist, where: p.id == c.id, preload: [:artist]
+
+    # IO.inspect(Repo.all(query))
     Repo.all(Leaderboard)
   end
 

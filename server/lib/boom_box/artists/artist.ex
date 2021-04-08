@@ -5,6 +5,7 @@ defmodule BoomBox.Artists.Artist do
   schema "artist" do
     field :name, :string
     has_many :following_artist, BoomBox.Following_Artists.Following_Artist
+    has_many :leaderboard, BoomBox.Leaderboards.Leaderboard
 
     timestamps()
   end

@@ -13,7 +13,7 @@ defmodule BoomBox.Users.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:email, :password_hash])
+    |> cast(attrs, [:email])
     |> add_password_hash(attrs["password"])
     |> validate_required([:email, :password_hash])
   end

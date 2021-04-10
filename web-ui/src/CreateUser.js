@@ -8,7 +8,7 @@ export default function CreateUser() {
 
     const [user, setUser] = useState({
         'email': "",
-        'password_hash': ""
+        'password': ""
     });
 
     function onSubmit(ev) {
@@ -24,7 +24,7 @@ export default function CreateUser() {
 
     function updatePassword(ev) {
         let newUser = Object.assign({}, user);
-        newUser["password_hash"] = ev.target.value;
+        newUser["password"] = ev.target.value;
         setUser(newUser);
     }
 
@@ -38,7 +38,7 @@ export default function CreateUser() {
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" onChange={updatePassword} value={user.password_hash} />
+                    <Form.Control type="password" onChange={updatePassword} value={user.password} />
                 </Form.Group>
 
                 <Button variant="primary" type="submit">

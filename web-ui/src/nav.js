@@ -1,7 +1,7 @@
-// Based on code from Nat Tuck's Lecture 17 Code
-import { Nav } from 'react-bootstrap';
+// Nav.js
+import { Navbar, Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-
+import store from './store';
 function Link({to, children}) {
   return (
     <Nav.Item>
@@ -12,12 +12,35 @@ function Link({to, children}) {
   );
 }
 
-export default function AppNav() {
+export default function AppNav({session}) {
+    function logout() {
+        store.dispatch({type: 'session/clear'});
+    }
+    let loginBar = (
+      <Nav className="ml-auto">
+        <NavLink to="/login" className="nav-link">Login</NavLink>
+        <NavLink to="/register" className="nav-link">Register</NavLink>
+      </Nav>
+    );
+    if (session) {
+        loginBar = (
+      <Nav className="ml-auto">
+        <p>Welcome Back</p>
+        <Nav.Link onClick={logout} className="nav-link">Logout</Nav.Link>
+      </Nav>
+      );
+    }
   return (
-    <Nav variant="pills">
-      <Link to="/leaderboard">Leaderboard</Link>
-      <Link to="/feed">User Feed</Link>
-      <Link to="/generator">Lyrics Generator</Link>
-    </Nav>
+    <Navbar bg="light" variant="light">
+      <Nav variant="pills">
+        <Link to="/leaderboard">Leaderboard</Link>
+        <Link to="/feed">User Feed</Link>
+        <Link to="/generator">Lyrics Generator</Link>
+      </Nav>
+      <Nav className="ml-auto">
+        <NavLink to="/login" className="nav-link">Login</NavLink>
+        <NavLink to="/register" className="nav-link">Register</NavLink>
+      </Nav>
+    </Navbar>
   );
 }

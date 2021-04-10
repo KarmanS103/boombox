@@ -9,6 +9,7 @@ import Artist from "./Artist";
 import Generator from "./generator";
 import CreateUser from "./CreateUser";
 import CreateArtist from "./CreateArtist";
+import Login from "./Login";
 import Nav from "./nav";
 
 function App() {
@@ -31,12 +32,15 @@ function App() {
         <Route exact path="/generator">
           <Generator />
         </Route>
-        <Route exact path="/users/create">
+        <Route exact path="/register">
           <CreateUser />
         </Route>
         <Route exact path="/artist/create">
           <CreateArtist />
         </Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>\
       </Switch>
     </Container>
   )

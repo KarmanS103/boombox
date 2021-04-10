@@ -47,6 +47,26 @@ export function fetch_following_artist() {
     }));
 }
 
+export function api_login(email, password) {
+  api_post("/session", {email, password}).then((data) => {
+    console.log("login resp", data);
+    if (data.session) {
+      let action = {
+        type: 'session/set',
+        data: data.session,
+      }
+      store.dispatch(action);
+    }
+    else if (data.error) {
+      let action = {
+        type: 'error/set',
+        data: data.error,
+      };
+      store.dispatch(action);
+    }
+  });
+}
+
 
 export function create_user(user) {
   return api_post("/users", {user});

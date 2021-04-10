@@ -1,5 +1,5 @@
 // Nav.js
-import { Navbar, Nav } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import store from './store';
 function Link({to, children}) {
@@ -31,16 +31,14 @@ export default function AppNav({session}) {
       );
     }
   return (
-    <Navbar bg="light" variant="light">
+    <div>
       <Nav variant="pills">
         <Link to="/leaderboard">Leaderboard</Link>
         <Link to="/artist">User Feed</Link>
         <Link to="/generator">Lyrics Generator</Link>
-      </Nav>
-      <Nav className="ml-auto">
         <NavLink to="/login" className="nav-link">Login</NavLink>
         <NavLink to="/register" className="nav-link">Register</NavLink>
       </Nav>
-    </Navbar>
+    </div>
   );
 }

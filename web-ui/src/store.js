@@ -1,3 +1,4 @@
+// Based on code from Nat Tuck's Lecture 19 code. 
 import { createStore, combineReducers } from 'redux';
 
 function leaderboard(state = [], action) {
@@ -61,7 +62,6 @@ function session(state = restore_session(), action) {
 }
 
 function root_reducer(state, action) {
-    console.log("root_reducer", state, action);
     let reducer = combineReducers({
         leaderboard, users, artist
     });

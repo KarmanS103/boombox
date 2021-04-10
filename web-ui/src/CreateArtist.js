@@ -1,8 +1,9 @@
+// Based on code from Nat Tuck's lecture 18 code. 
 import { useState } from 'react';
 
 import { Form, Button } from 'react-bootstrap';
 
-import { create_artist, fetch_artist } from './api';
+import { create_artist } from './api';
 
 export default function CreateArtist() {
 

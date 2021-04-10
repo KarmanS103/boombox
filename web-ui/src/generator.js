@@ -4,8 +4,6 @@ import { Form, Button } from 'react-bootstrap';
 import naivebayes from "./naivebayes";
 
 function GeneratedLyrics(lyrics, quant) {
-    console.log(lyrics["lyrics"])
-    console.log(quant)
     return (
         <div>
             <h1>Generated Lyrics</h1>
@@ -24,8 +22,6 @@ export default function Generator() {
         ev.preventDefault();
         setQuantity("hello");
         naivebayes(artist, lyrics).then((xs) => setGeneratedLyrics(xs));
-        console.log(lyrics)
-        console.log(quantity)
         setArtist("")
         setLyrics("")
     }

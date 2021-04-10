@@ -13,7 +13,6 @@ async function get_album(apikey, artist_id) {
 }
 
 async function get_album_tracks(apikey, album_id) {
-    console.log(album_id)
     const response = await fetch('https://thingproxy.freeboard.io/fetch/http://api.musixmatch.com/ws/1.1/album.tracks.get?apikey=' + apikey + '&album_id=' + album_id + '&page=1&page_size=8', {});
     const json = await response.json();
     return json["message"]["body"]["track_list"];
@@ -22,7 +21,6 @@ async function get_album_tracks(apikey, album_id) {
 async function get_lyrics(apikey, track_id) {
     const response = await fetch('https://thingproxy.freeboard.io/fetch/http://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=' + apikey + '&track_id=' + track_id, {});
     const json = await response.json();
-    console.log(json)
     return json["message"]["body"]["lyrics"]["lyrics_body"];
 }
 
@@ -47,23 +45,18 @@ function generatelyrics(alllyrics, lyricscount) {
     return bars
 }
 
-
 export default async function naivebayes(artist, lyricscount) {
     let apikey = config()
 
     let artist_id = await search_artist(apikey, artist);
-    console.log(artist_id)
     let album_id = await get_album(apikey, artist_id)
-    console.log(album_id)
     let track_id = await get_album_tracks(apikey, album_id)
-    console.log(track_id)
 
     let tracks = []
 
     for (let i = 0; i < track_id.length; i++) {
         tracks.push(track_id[i]["track"]["track_id"])
     }
-    console.log(tracks)
 
     let alllyrics = []
 
@@ -77,6 +70,5 @@ export default async function naivebayes(artist, lyricscount) {
 
     let generatedlyrics = generatelyrics(alllyrics, lyricscount)
 
-    console.log(generatedlyrics)
     return generatedlyrics
 }

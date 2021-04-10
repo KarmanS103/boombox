@@ -34,7 +34,7 @@ export default function AppNav({session}) {
     <Navbar bg="light" variant="light">
       <Nav variant="pills">
         <Link to="/leaderboard">Leaderboard</Link>
-        <Link to="/feed">User Feed</Link>
+        <Link to="/artist">User Feed</Link>
         <Link to="/generator">Lyrics Generator</Link>
       </Nav>
       <Nav className="ml-auto">

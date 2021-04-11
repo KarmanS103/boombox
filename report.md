@@ -2,11 +2,7 @@ Final Project Written Report Who was on your team? Our team was made
 up of Karman Singh and Xiao Tao. 
 
 What’s the URL of your deployed app? 
-http://boombox.4550xiaotao.art/
 http://boombox2.4550xiaotao.art/ 
-We are likely going to deploy once
-more after this so please grade boombox2 (second link) if it is live,
-if not, then grade boombox (first link). 
 
 What’s the URL of your github repository with the code for your
     deployed app? https://github.com/KarmanS103/boombox 
